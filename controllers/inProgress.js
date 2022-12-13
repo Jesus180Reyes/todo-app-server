@@ -3,7 +3,7 @@ const InProgress = require("../models/InProgress");
 const Todo = require("../models/Todo");
 const getTaskInProgress = async(req,res = response)=> {
     const todos = await InProgress.find();
-    const total = inProgress.length
+    const total = todos.length
     res.json({
         ok:true,
         total,

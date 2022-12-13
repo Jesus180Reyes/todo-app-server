@@ -4,7 +4,7 @@ const Done = require("../models/Done");
 const getDone = async (req,res = response)=> {
 
     const todos = await Done.find();
-    const total = done.length
+    const total = todos.length
     res.json({
         ok:true,
         total,
