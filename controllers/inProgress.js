@@ -2,12 +2,12 @@ const { response, request } = require("express");
 const InProgress = require("../models/InProgress");
 const Todo = require("../models/Todo");
 const getTaskInProgress = async(req,res = response)=> {
-    const inProgress = await InProgress.find();
+    const todos = await InProgress.find();
     const total = inProgress.length
     res.json({
         ok:true,
         total,
-        inProgress
+        todos
     });
 }
 

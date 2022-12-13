@@ -3,12 +3,12 @@ const InProgress = require("../models/InProgress");
 const Done = require("../models/Done");
 const getDone = async (req,res = response)=> {
 
-    const done = await Done.find();
+    const todos = await Done.find();
     const total = done.length
     res.json({
         ok:true,
         total,
-        done
+        todos
     });
 
 }
