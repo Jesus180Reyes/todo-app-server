@@ -27,9 +27,30 @@ const postDone = async(req = request, res = response)=> {
         todoDeleted,
     })
 }
+const deleteDone = async(req = request, res= response)=> {
+
+    try {
+    const {_id} = req.params;
+    const todo =await Done.findByIdAndDelete(_id, {new:true});
+    res.json({
+        ok:true,
+        msg:"Todo Borrado",
+        todo
+    });
+    } catch (error) {
+        console.log(error);
+        return res.status(500).json({
+            ok:false,
+            msg: "Hable con el administrador"
+        });
+        
+    }
+}
 
 
 module.exports = {
     getDone,
     postDone,
+    deleteDone,
+    
 }
