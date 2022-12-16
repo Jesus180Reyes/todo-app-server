@@ -62,6 +62,7 @@ class Server {
         this.app.use( this.paths.todo, require('../routes/todo'));
         this.app.use( this.paths.inProgress, require('../routes/inProgress'));
         this.app.use( this.paths.done, require('../routes/done'));
+        this.app.get(__dirname + "/public/index.html")
         
         
     }
